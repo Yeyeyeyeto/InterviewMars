@@ -9,7 +9,7 @@ import java.util.Scanner;
  * 小红书2020校招测试开发&后端笔试题卷三
  * [编程题]薯券使用问题
  *
- *
+ * https://www.nowcoder.com/questionTerminal/61d87f7f514a4687859a837578ef3aca
  */
 public class PotatoCouponUse {
 
