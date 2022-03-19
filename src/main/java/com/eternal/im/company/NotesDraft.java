@@ -11,7 +11,7 @@ import java.util.Scanner;
  * 小红书2020校招测试开发&后端笔试题卷三
  * [编程题]笔记草稿
  *
- * https://www.nowcoder.com/questionTerminal/0823ca800ee04706a7e2dafc837dc236
+ * https://www.nowcoder.com/questionTerminal/0823ca800ee04706a7e2dafc837dc236 
  */
 public class NotesDraft {
 
