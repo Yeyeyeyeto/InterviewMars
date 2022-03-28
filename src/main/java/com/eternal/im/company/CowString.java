@@ -19,12 +19,23 @@ public class CowString {
         int k = sc.nextInt();
         sc.close();
 
-        NS_String(s, k);
+        System.out.println(NS_String(s, k));
 
     }
 
-    public static void NS_String (String s, int k) {
+    public static String NS_String (String s, int k) {
+        char p = 'a';
+        String result = s;
 
+        while (k > 0 && p <= 'z') {
+            while (result.indexOf(p) == -1) {
+                p = (char) (p + 1);
+            }
+            result = result.replace(p + "", "");
+            k--;
+        }
+
+        return result;
 
     }
 
