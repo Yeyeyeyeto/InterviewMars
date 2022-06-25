@@ -15,9 +15,9 @@ public class StaticProxy {
 //        WeddingCompany weddingCompany = new WeddingCompany(new You());
 //        weddingCompany.HappyMarry();
 
-        You you = new You();
+        You2 you = new You2();
         new Thread(() -> System.out.println("I LOVE YOU")).start();
-        new WeddingCompany(new You()).HappyMarry();
+        new WeddingCompany(new You2()).HappyMarry();
     }
 }
 
@@ -26,7 +26,7 @@ interface Marry {
 }
 
 // 真实角色，你去结婚
-class You implements Marry {
+class You2 implements Marry {
     @Override
     public void HappyMarry() {
         System.out.println("要结婚了，超开心！");
