@@ -1,7 +1,6 @@
 package com.eternal.learnz.lesson1;
 
 public class Code07_EvenTimesOddTimes {
-
 	public static void printOddTimesNum1(int[] arr) {
 		int eO = 0;
 		for (int cur : arr) {
@@ -42,5 +41,4 @@ public class Code07_EvenTimesOddTimes {
 		printOddTimesNum2(arr2);
 
 	}
-
 }
