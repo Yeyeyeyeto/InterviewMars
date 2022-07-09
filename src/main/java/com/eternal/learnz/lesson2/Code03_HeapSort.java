@@ -8,17 +8,23 @@ public class Code03_HeapSort {
 		if (arr == null || arr.length < 2) {
 			return;
 		}
-		for (int i = 0; i < arr.length; i++) {
-			heapInsert(arr, i);
+//		for (int i = 0; i < arr.length; i++) {  // O(N)
+//			heapInsert(arr, i);  // O(logN)
+//		}
+
+		for (int i = 0; i < arr.length - 1; i++) {
+			heapify(arr, i, arr.length);
 		}
+
 		int size = arr.length;
 		swap(arr, 0, --size);
-		while (size > 0) {
-			heapify(arr, 0, size);
-			swap(arr, 0, --size);
+		while (size > 0) {   // O(N)
+			heapify(arr, 0, size);  // O(logN)
+			swap(arr, 0, --size);    // O(1)
 		}
 	}
 
+	// 某个数现在处在index位置，往上继续移动
 	public static void heapInsert(int[] arr, int index) {
 		while (arr[index] > arr[(index - 1) / 2]) {
 			swap(arr, index, (index - 1) /2);
@@ -26,10 +32,13 @@ public class Code03_HeapSort {
 		}
 	}
 
+	// 某个数在index位置，能否往下移动
 	public static void heapify(int[] arr, int index, int size) {
-		int left = index * 2 + 1;
-		while (left < size) {
+		int left = index * 2 + 1;  // 左孩子的下标
+		while (left < size) {  // 下方还有孩子的时候
+			// 两个孩子中，谁的值大，把下标给largest
 			int largest = left + 1 < size && arr[left + 1] > arr[left] ? left + 1 : left;
+			// 父和孩子之间，谁的值大，把下标给largest
 			largest = arr[largest] > arr[index] ? largest : index;
 			if (largest == index) {
 				break;

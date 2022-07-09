@@ -10,7 +10,22 @@ import java.util.Collections;
 public class MergeList {
 
     public static void main(String[] args) {
+        ListNode head = new ListNode(1);
+        ListNode v2 = new ListNode(3);
+        ListNode v3 = new ListNode(5);
+        ListNode head2 = new ListNode(2);
+        ListNode v4 = new ListNode(4);
+        ListNode v5 = new ListNode(6);
 
+        head.next = v2;
+        v2.next = v3;
+
+        head2.next = v4;
+        v4.next = v5;
+
+//        head.print();
+
+        Merge2(head, head2).print();
     }
 
     /*
@@ -45,7 +60,34 @@ public class MergeList {
     }
 
     /*
-     * BM5 合并k个已排序的链表
+    * BM4 合并两个排序的链表
+    * 用一个新链表，原两链表两两比较，较小的数放入新链表
+    * */
+    public static ListNode Merge2(ListNode list1, ListNode list2) {
+        ListNode result = new ListNode(-1);
+        ListNode cur = result;
+
+        // 保证两个list不为空的情况下，比较后传值
+        while (list1 != null && list2 != null) {
+            if (list1.val >= list2.val) {
+                result.next = list2;
+                list2 = list2.next;
+            } else {
+                result.next = list1;
+                list1 = list1.next;
+            }
+            result = result.next;
+        }
+
+        // 还有剩下的值直接拿走
+        if (list1 != null) result.next = list1;
+        if (list2 != null) result.next = list2;
+
+        return cur.next;
+    }
+
+    /*
+     * BM5 合并k个已排序的链表???
      * */
     public static ListNode mergeKLists(ArrayList<ListNode> lists) {
         return divideMerge(lists, 0, lists.size() - 1);

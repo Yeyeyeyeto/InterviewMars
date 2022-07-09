@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Code02_RadixSort {
 
 	// only for no-negative value
+	// 基数排序
 	public static void radixSort(int[] arr) {
 		if (arr == null || arr.length < 2) {
 			return;
@@ -28,9 +29,14 @@ public class Code02_RadixSort {
 	public static void radixSort(int[] arr, int begin, int end, int digit) {
 		final int radix = 10;
 		int i = 0, j = 0;
-
+		// 有多少个数准备多少个辅助空间
 		int[] bucket = new int[end - begin + 1];
-		for (int d = 1; d <= digit; d++) {
+		for (int d = 1; d <= digit; d++) {  // 有多少位就进出多少次
+			// 10个空间
+			// count[0] 当前为（d位）是0的数字有多少个
+			// count[1] 当前为（d位）是（0和1）的数字有多少个
+			// count[2] 当前为（d位）是（0、1和2）的数字有多少个
+			// count[i] 当前为（d位）是（0~i）的数字有多少个
 			int[] count = new int[radix];
 			for (i = begin; i <= end; i++) {
 				j = getDigit(arr[i], d);
