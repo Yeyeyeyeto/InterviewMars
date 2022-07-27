@@ -1,7 +1,9 @@
 package com.eternal.learnz.lesson4;
 
+// 翻转链表
 public class Code02_ReverseList {
 
+	// 单链表
 	public static class Node {
 		public int value;
 		public Node next;
@@ -23,6 +25,7 @@ public class Code02_ReverseList {
 		return pre;
 	}
 
+	// 双链表
 	public static class DoubleNode {
 		public int value;
 		public DoubleNode last;

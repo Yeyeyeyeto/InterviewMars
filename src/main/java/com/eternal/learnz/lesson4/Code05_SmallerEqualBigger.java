@@ -129,7 +129,6 @@ public class Code05_SmallerEqualBigger {
 		// head1 = listPartition1(head1, 4);
 		head1 = listPartition2(head1, 5);
 		printLinkedList(head1);
-
 	}
 
 }
